@@ -5,17 +5,15 @@ import { useRef, useState } from "react";
 const Gallery = ({ images }) => {
   const galleryContainer = useRef();
   const galleryItem = useRef();
-  const indicator = useRef();
-  const [hoveredIndex, setHoveredIndex] = useState(null) //預設
+  const [hoveredIndex, setHoveredIndex] = useState(4) //預設
 
   const handleMouseEnter = (index) => {
     setHoveredIndex(index);
   }
 
   const handleMouseLeave = () => {
-    setHoveredIndex(null);
+    setHoveredIndex(4);
   } 
-
 
   return (
     <div className="gallery-container" ref={galleryContainer}>
@@ -23,17 +21,15 @@ const Gallery = ({ images }) => {
         {images &&
           images.map((image, index) => (
             <div
-              className={`gallery-item ${ 
-                 hoveredIndex === index
-                  ? "hover-item"
-                  : ""
+              className={`gallery-item ${
+                hoveredIndex === index ? "hover-item" : ""
               }`}
               key={image}
               ref={galleryItem}
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
             >
-              <Image src={image} alt={image} width={400} height={900} />
+              <img src={image} alt='images'/>
             </div>
           ))}
       </div>

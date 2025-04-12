@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ShaderImg from "@/components/ShaderImg";
@@ -8,12 +7,24 @@ import BlurText from "@/components/BlurText";
 import IntroList from "@/components/IntroList";
 import CustomCursor from "@/components/CustomCursor";
 import { useCustomCursor } from "@/hooks/useCustomCursor";
+import Gallery from "@/components/Gallery";
+import { useEffect, useState } from "react";
 
 
 export default function Home() {
   // 調用自訂義鼠標Hook
   const { cursorActive, cursorText, handleCursor, resetCursor } =
     useCustomCursor();
+
+  //從API獲取GALLERY圖片
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    fetch("/api/get-images")
+      .then((res) => res.json())
+      .then(setImages)
+      .catch((err) => console.error("Error fetching images:", err));
+  }, []);
 
   return (
     <div className="home-page-container">
@@ -26,7 +37,7 @@ export default function Home() {
         onMouseLeave={resetCursor}
       >
         <video
-          src={"/video/Co-web.mp4"}
+          src={"/video/Final Comp.mp4"}
           autoPlay
           muted
           loop
@@ -61,7 +72,6 @@ export default function Home() {
           <div></div>
           <aside className="hero-grid-1">
             <Link href="/products">
-              {/* <p>MEN&apos;S</p> */}
               <Image
                 src="/image/hero-man.png"
                 alt="mens"
@@ -71,7 +81,6 @@ export default function Home() {
               />
             </Link>
             <Link href="/products">
-              {/* <p>WOMEN&apos;S</p> */}
               <Image
                 src="/image/hero-woman.png"
                 alt="mens"
@@ -83,28 +92,25 @@ export default function Home() {
           </aside>
           <div className="hero-grid-2">
             <div className="hero-center-text">
-              <p>COOPERATION</p>
+              <p>// GRAPHIC</p>
             </div>
             <div className="hero-center-text">
-              <p>INHOUSE MATERIAL</p>
-              <p>70% KNIT</p>
-              <p>30% WOVEN</p>
+              <p> // FASHION</p>
             </div>
             <div className="hero-center-text">
-              <p>APPAREL</p>
-              <p>GRAPHIC</p>
+              <p>// CODING</p>
             </div>
           </div>
           <div className="hero-grid-3"></div>
           <div className="hero-grid-4"></div>
           <div className="hero-grid-5">
             <div>
-              <h2>WHAT WE CAN DO?</h2>
+              <h2>WHAT I CAN DO?</h2>
             </div>
             <div>
               <h2>CREATE</h2>
               <p>
-                2 SEASION IN 1 YEAR OVER 100 STYLES NEW SEASONAL SAMPLES
+                2 SEASION IN 1 YEAR OVER 50 GRAPHICS NEW SEASONAL SAMPLES
                 SHOWCASE DESIGN CONCEPT SHARING
               </p>
             </div>
@@ -119,18 +125,18 @@ export default function Home() {
         </div>
       </section>
       {/* 文字說明區塊 */}
-      <section className="bg-black  flex flex-col pt-[20rem]  scroll-section text-[4rem]">
+      <section className="bg-[#E1E1E1]  flex flex-col pt-[20rem]  scroll-section text-[4rem]">
         <div
           className="sticky top-40 pr-[5rem] cursor-none"
           onMouseEnter={() => handleCursor("Scroll")}
           onMouseLeave={resetCursor}
         >
-          <div className="invert flex justify-end ">
-            <BlurText words={"COLAB is the creative and innovation center"} />
+          <div className=" flex justify-end ">
+            <BlurText words={"TOGETHER, WE CREATE TOMORROW"} />
           </div>
           <div className="flex h-[60rem] justify-end">
-            <div className="invert ">
-              <BlurText words={"for Far Eastern New Century"} />
+            <div>
+              <BlurText words={"HSIAO WEN SU"} />
             </div>
             <div className="animate-scroll-broaden w-[10rem] overflow-hidden">
               <Image
@@ -147,20 +153,32 @@ export default function Home() {
           <IntroList
             invert={"invert"}
             videoUrl={"/video/Colab2022.mp4"}
-            listItem={[
-              "Create Volume with Print",
-              "Soft Texture",
-              "Special Techniques",
-            ]}
+            listItem={["Innovation", "Flexible", "Efficient"]}
           />
+        </div>
+      </section>
+      {/* Gallery區塊 */}
+      <section className="relative bg-foreground">
+        <h2 className="sticky top-0 text-background text-[3rem] pl-25 pt-20">
+          ARTWORKS
+        </h2>
+        <div
+          className="w-full h-[90vh] cursor-none"
+          onMouseEnter={() => handleCursor("Hover")}
+          onMouseLeave={resetCursor}
+        >
+          <Gallery images={images.slice(0, 20)} />
         </div>
       </section>
       {/* 分類卡片區塊 */}
       <section
-        className="bg-white h-[100vh] w-full cursor-none"
+        className="bg-foreground h-[100vh] w-full cursor-none  relative"
         onMouseEnter={() => handleCursor("Click")}
         onMouseLeave={resetCursor}
       >
+        <h2 className="sticky top-0 text-background text-[3rem] pl-25 pt-20">
+          PROJECTS
+        </h2>
         <CategoryCard cursorActive={cursorActive} />
       </section>
     </div>

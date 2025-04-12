@@ -13,20 +13,12 @@ const Navbar = () => {
       <div className="navbar-container">
         <div className="marquee-container ">
           <h1 className="marquee-content animate-marquee">
-            FAR EASTERN NEW CENTURY COLAB
+            HSIAO WEN SU PORTFOLIO
           </h1>
         </div>
         <header className="header-wrap">
           <Link href="/" className="logo-wrap">
-            <Image
-              className="dark:invert" //深色模式反轉顏色
-              src="/colab.svg"
-              alt="colab logo"
-              width={60}
-              height={38}
-              priority
-            />
-            <span className="font-bold ">COLAB</span>
+            <span className="font-bold ">HSIAOWENSU</span>
           </Link>
           <ul className="main-nav">
             <li
@@ -35,7 +27,7 @@ const Navbar = () => {
               onMouseLeave={() => setIsProductsHover(false)}
             >
               <Link href="/products" className="flex">
-                <span className="mr-2">PRODUCTS</span>
+                <span className="mr-2">PROJECTS</span>
                 <Image
                   className="invert "
                   src="/downArrow.svg"
@@ -46,54 +38,31 @@ const Navbar = () => {
                 />
               </Link>
               {/* Products 下拉選單清單 */}
-              <ul className="products-drop-down-container">
+              <ul className="products-drop-down-container -translate-x-1/4">
                 <li>
-                  <Link href="/products">ALL ITEMS</Link>
+                  <Link href="/projects/fashion">FASHION</Link>
                 </li>
                 <li>
-                  <Link href="/products/men" className="flex">
-                    <span>MEN</span>
-                    <Image
-                      className="invert "
-                      src="/downArrow.svg"
-                      alt="dropdown-icon"
-                      width={10}
-                      height={5}
-                      priority
-                    />
-                  </Link>
+                  <Link href="/projects/graphic">GRAPHIC</Link>
                 </li>
                 <li>
-                  <Link href="/products/women" className="flex">
-                    WOMEN
-                    <Image
-                      className="invert"
-                      src="/downArrow.svg"
-                      alt="dropdown-icon"
-                      width={10}
-                      height={10}
-                      priority
-                    />
-                  </Link>
+                  <Link href="/projects/visual">VISUAL</Link>
                 </li>
                 <li>
-                  <Link href="/products/print&emb">PRINT & EMB</Link>
+                  <Link href="/projects/motion">MOTION</Link>
+                </li>
+                <li>
+                  <Link href="/projects/website">WEBSITE</Link>
                 </li>
               </ul>
             </li>
             <li>
-              <Link href="/about">ABOUT</Link>
-            </li>
-            <li>
-              <Link href="/contact">CONTACT</Link>
+              <Link href="/resume">RESUME</Link>
             </li>
           </ul>
           <ul className="main-nav ">
             <li>
-              <Link href="/search">SEARCH</Link>
-            </li>
-            <li>
-              <Link href="/login">LOG IN</Link>
+              <Link href="/contact">CONTACT</Link>
             </li>
           </ul>
           {/* 下拉選單背景框 */}

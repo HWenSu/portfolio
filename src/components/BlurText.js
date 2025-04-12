@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useState } from "react";
 
 const BlurText = ({ words, minBlur = 0, maxBlur = 10 }) => {

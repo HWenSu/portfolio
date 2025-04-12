@@ -4,13 +4,13 @@ import LightText from "@/components/LightText";
 const IntroList = ({invert, listItem, videoUrl}) => {
 
   const introduction =
-    "We operate our own printing and embroidery facility in Vietnam, allowing us to independently develop innovative techniques and surface effects. Additionally, we release a new lookbook twice a year to showcase our latest developments and seasonal inspirations.";
+    "I am a visual and digital designer skilled in Adobe Photoshop, Illustrator, After Effects, Premiere, React, Next, and Figma. Export experience strengthened my cross-departmental collaboration, aligning diverse needs for international brands.";
 
   return (
     <section className={`print-tech-container ${invert && invert} `}>
       <div className="left-aside  w-[40vw] flex ml-20 ">
         <video
-          src={"/video/Colab2022.mp4"}
+          src={"/video/P-E.mp4"}
           autoPlay
           muted
           loop

@@ -46,8 +46,8 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.13 0.028 261.692);
+  --background: #F9F9F9;
+  --foreground: #0E0E0E;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.13 0.028 261.692);
   --popover: oklch(1 0 0);
@@ -125,6 +125,8 @@
     /* Base font size using relative units */
     font-size: 62.5%; /* 1rem = 10px */
     scroll-behavior: smooth;
+    max-width: screen;
+    overflow-x: hidden;
   }
 
   /* Large desktop screens (1440px and up) */
@@ -340,7 +342,7 @@
 }
 
 .scale-y-short {
-  @apply pointer-events-auto  scale-y-20;
+  @apply pointer-events-auto  scale-y-15;
 }
 
 .dropdown-content {
@@ -357,7 +359,7 @@
 
 .product-items:hover .products-drop-down-container {
   animation: slide-up 0.4s ease-in-out;
-  @apply flex absolute -bottom-[40px] justify-center items-center;
+  @apply flex absolute -bottom-[1rem] justify-center items-center;
 }
 
 .products-drop-down-container li {
@@ -489,11 +491,11 @@
 /* Product 頁面 */
 /* Category Card */
 .category-cards-container {
-  @apply flex justify-center items-center pt-[20vh];
+  @apply flex mx-auto w-[70vw] justify-between items-center pt-[8rem];
 }
 
 .category-card {
-  @apply relative bg-gray-200 m-2 w-[30vw] h-[70vh] overflow-hidden;
+  @apply relative bg-gray-200 m-2 w-[20vw] max-h-[70vh] overflow-hidden;
 }
 
 .category-card::after {
@@ -505,15 +507,15 @@
 }
 
 .category-card:hover img {
-  @apply blur-xs duration-300 ease-in-out;
+  @apply scale-110 blur-xs transition-all duration-500 ease-in-out;
 }
 
 .category-card:hover::after {
-  @apply opacity-10;
+  @apply opacity-30;
 }
 
 .category-title {
-  @apply absolute top-1/2  -translate-y-1/2  text-white text-[4rem] w-full text-center z-[10];
+  @apply absolute top-2/3 text-white text-[4rem] w-full text-center z-[10];
 }
 
 /* Product 頁面 */
@@ -694,7 +696,7 @@
 /* Gallery */
 
 .gallery-container {
-  @apply absolute top-[35vh] left-1/2 -translate-x-1/2 mx-auto py-[1rem] px-[0.5rem] flex justify-center w-[50vw] h-[40vh];
+  @apply absolute top-1/2 left-1/2 -translate-1/2 mx-auto py-[1rem] px-[0.5rem] flex justify-center w-[60vw] h-[50vh];
 }
 
 .gallery {
@@ -702,13 +704,357 @@
 }
 
 .gallery-item {
-  @apply flex justify-center items-center flex-[0_1_1.5rem] mx-[0.5rem] my-0 overflow-hidden transition-[flex] duration-100 ease-[cubic-bezier(0.75,0.82,0.165,1)];
+  @apply flex justify-center items-center flex-[0_1_1rem] mx-[0.5rem] my-0 overflow-hidden transition-[flex] duration-100 ease-[cubic-bezier(0.75,0.82,0.165,1)] bg-white;
 }
 
 .gallery-item img {
-  @apply max-w-[500px] object-contain scale-[2];
+  @apply max-w-[300px] object-contain scale-[2];
 }
 
 .hover-item {
-  @apply flex-[1_1_10rem];
+  @apply flex-[1_1_20rem];
+}
+
+/* Card 3D Hover */
+.card {
+  width: 25rem;
+  height: var(--card-height);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0 36px;
+  perspective: 2500px;
+  margin: 0 50px;
+}
+
+.cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wrapper {
+  transition: all 0.5s;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+.card:hover .wrapper {
+  transform: perspective(900px) translateY(-5%) rotateX(50deg) translateZ(0);
+  box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
+
+.wrapper::before,
+.wrapper::after {
+  content: "";
+  opacity: 0;
+  width: 100%;
+  height: 80px;
+  transition: all 0.5s;
+  position: absolute;
+  left: 0;
+}
+.wrapper::before {
+  top: 0;
+  height: 100%;
+  background-image: linear-gradient(
+    to top,
+    transparent 46%,
+    rgba(12, 13, 19, 0.5) 68%,
+    rgba(12, 13, 19) 97%
+  );
+}
+.wrapper::after {
+  bottom: 0;
+  opacity: 1;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 46%,
+    rgba(12, 13, 19, 0.5) 68%,
+    rgba(12, 13, 19) 97%
+  );
+}
+
+.card:hover .wrapper::before,
+.wrapper::after {
+  opacity: 1;
+}
+
+.card:hover .wrapper::after {
+  height: 120px;
+}
+.title {
+  width: 100%;
+  transition: transform 0.5s;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+.card:hover .title {
+  transform: translate3d(0%, -50px, 100px);
+}
+
+.character {
+  width: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  position: absolute;
+  z-index: -1;
+}
+
+.card:hover .character {
+  opacity: 1;
+  scale: 1.2;
+  transform: translate3d(0%, -30%, 100px);
+}
+
+/* website page */
+.website-grid {
+  width: 100%;
+  max-width: 60rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.tile, .tile-link{
+  @apply w-full h-full;
+}
+
+.grid-block {
+  width: 60%;
+  height: 20rem;
+  padding: 1rem;
+  border-color: red;
+  overflow: hidden;
+}
+
+.image-grid {
+  -webkit-transform: rotateX(45deg) rotateZ(45deg);
+  transform: rotateX(45deg) rotateZ(45deg);
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+}
+
+.image-grid .tile-link:hover .tile-img {
+  top: -1rem;
+  left: -1rem;
+  object-fit: cover;
+}
+
+.image-grid .tile-img {
+  position: relative;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  -webkit-transition-property: opacity, top, left, box-shadow;
+  transition-property: opacity, top, left, box-shadow;
+}
+
+.tile-link {
+  display: block;
+}
+
+.tile-link:hover .tile-img {
+  opacity: 1;
+}
+
+.tile-link:hover .tile-img-link {
+  display: block;
+}
+
+.tile-link:hover .tile-img-link:hover .tile-img {
+  opacity: 0.5;
+}
+
+.tile-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 0.125s;
+  transition-duration: 0.125s;
+  -webkit-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+}
+
+.tile-link:hover .tile-img5 {
+  box-shadow: 5px 5px rgba(138, 218, 245, 0.4),
+    10px 10px rgba(138, 218, 245, 0.3), 15px 15px rgba(138, 218, 245, 0.2),
+    20px 20px rgba(138, 218, 245, 0.1), 25px 25px rgba(138, 218, 245, 0.05);
+}
+
+/* Rotating Gallery */
+
+.r-gallery{
+  position:relative;
+  width:300px;
+  height:200px;
+  transform-style:preserve-3d;
+  animation:rotate 35s linear infinite;
+}
+
+@keyframes rotate{
+  from{
+    transform:perspective(1200px) rotateY(0deg);
+  }
+  
+  to{
+    transform:perspective(1200px) rotateY(360deg);
+  }
+}
+
+.r-gallery span{
+  position:absolute;
+  width:100%;
+  height:100%;
+  transform-origin:center;
+  transform-style:preserve-3d;
+  transform:rotateY(calc(var(--i) * 45deg)) translateZ(380px);
+}
+
+.r-gallery span img{
+  position:absolute;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* Grid-Gallery */
+.material-fill-1 {
+  font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48;
+}
+
+.g-gallery {
+  --_height: 250px;
+  --_gap: 0.5rem;
+  --_height-hover: calc(var(--_height) * 2);
+
+  width: 100%;
+  max-width: 800px;
+  display: grid;
+  gap: var(--_gap);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 響應式列數 */
+}
+
+@media (min-width: 720px) {
+  .g-gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.g-gallery > div {
+  /* 移除以行為單位的高度控制 */
+  height: fit-content;
+  display: flex; /* 使用 Flexbox 垂直排列 article */
+  flex-direction: column;
+  gap: var(--_gap);
+}
+
+.g-gallery > div > article {
+  position: relative;
+  height: var(--_height); /* 每個 article 的初始高度 */
+  transition: height 300ms ease-in-out; /* 平滑的高度過渡 */
+  overflow: hidden; /* 確保內容不溢出 */
+}
+
+.g-gallery > div > article:hover {
+  height: var(--_height-hover); /* hover 時增加高度 */
+  background-color: rgb(151, 152, 201);
+  color: #FFF;
+  z-index: 1; /* 確保 hover 時不會被其他元素遮擋 */
+}
+
+.g-gallery > div > article > div {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #00000070;
+  font-size: 0.65rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.15rem 0.5rem;
+}
+
+.g-gallery > div > article > div > span {
+  font-size: 0.7rem;
+  color: red;
+}
+
+.g-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 300ms ease-in-out; /* 添加圖片本身的過渡效果 (可選) */
+cursor: pointer;
+}
+
+.g-gallery > div > article:hover img {
+  transform: scale(1.05); /* 可選：hover 時輕微放大圖片 */
+}
+
+/* ImagePopup */
+.image-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* 半透明黑色背景 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* 確保在其他元素之上 */
+}
+
+.image-popup {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  max-width: 90%; /* 限制最大寬度 */
+  max-height: 90%; /* 限制最大高度 */
+}
+
+.image-popup img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain; /* 確保圖片完整顯示在容器內 */
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.close-button:hover {
+  opacity: 1;
 }

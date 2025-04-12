@@ -5,19 +5,19 @@ import Link from "next/link";
 const CategoryCard = ({cursorActive}) => {
 const categoryList = [
   {
-    name: "MEN'S",
-    imgUrl: "/image/category-men.png",
-    linkUrl: "/products/men",
+    name: "WEBSITE",
+    imgUrl: "/image/webs.png",
+    linkUrl: "/projects/website",
   },
   {
-    name: "WOMEN'S",
-    imgUrl: "/image/category-woman.png",
-    linkUrl: "/products/women",
+    name: "GRAPHIC",
+    imgUrl: "/image/graphic.png",
+    linkUrl: "/projects/graphic",
   },
   {
-    name: "PRINT & EMB",
-    imgUrl: "/image/category-print.png",
-    linkUrl: "/products/print&emb",
+    name: "FASHION",
+    imgUrl: "/image/fashion.png",
+    linkUrl: "/projects/fashion",
   },
 ];
 
