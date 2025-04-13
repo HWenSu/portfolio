@@ -88,9 +88,6 @@ const page = () => {
       {/* 影片區塊 */}
       <section className="bg-foreground">
         <div>
-          <video src="">
-            
-          </video>
         </div>
       </section>
     </div>
