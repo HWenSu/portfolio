@@ -1,4 +1,5 @@
 import CategoryCard from "@/components/CategoryCard";
+import Image from "next/image";
 
 const Resume = () => {
   const skills = ["Adobe Illustrator 、Photoshop、After Effect、Figma", "HTML5、CSS3、JavaScript", "React、Next 框架使用", "Git 版本控制", "API串接", "Tailwind 、 Shadcn", "RWD設計經驗"]
@@ -193,7 +194,7 @@ const Resume = () => {
       </section>
       <aside className="col-start-9 col-end-11 pr-[2rem] row-start-1 row-end-4 sticky top-[5rem] self-start">
         <div className=" mb-4 animate-slide-left ">
-          <img src="/avatar.png" />
+          <Image src="/avatar.png" alt="avatar" />
         </div>
         <div className="pb-6  animate-slide-down">
           <h3 className="divider">EDUCATION</h3>

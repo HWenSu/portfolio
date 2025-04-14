@@ -1,3 +1,4 @@
+import Image from "next/image";
 
 const Website = () => {
   return (
@@ -10,7 +11,7 @@ const Website = () => {
               href="https://booking-system-weld-two.vercel.app/"
               target="_blank"
             >
-              <img
+              <Image
                 className="tile-img tile-img5"
                 src="/image/web/w-1.png"
                 alt="Image"
@@ -25,7 +26,7 @@ const Website = () => {
               href="https://picture-web.vercel.app/"
               target="_blank"
             >
-              <img
+              <Image
                 className="tile-img tile-img5"
                 src="/image/web/w-2.png"
                 alt="Image"
@@ -40,7 +41,7 @@ const Website = () => {
               href="https://hwensu.github.io/learning-tool/"
               target="_blank"
             >
-              <img
+              <Image
                 className="tile-img tile-img5"
                 src="/image/web/w-3.png"
                 alt="Image"
@@ -56,7 +57,7 @@ const Website = () => {
               href="https://hwensu.github.io/gess-cards-game/"
               target="_blank"
             >
-              <img
+              <Image
                 className="tile-img tile-img5"
                 src="/image/web/w-4.png"
                 alt="Image"
@@ -67,7 +68,7 @@ const Website = () => {
         <div className="grid-block">
           <div className="tile">
             <a className="tile-link" href="/" target="_blank">
-              <img
+              <Image
                 className="tile-img tile-img5"
                 src="/image/web/w-5.png"
                 alt="Image"

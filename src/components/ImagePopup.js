@@ -1,3 +1,4 @@
+import Image from "next/image";
 
 const ImagePopup = ({ imageUrl, onClose }) => {
   if (!imageUrl) {
@@ -7,7 +8,7 @@ const ImagePopup = ({ imageUrl, onClose }) => {
   return (
     <div className="image-popup-overlay" onClick={onClose}>
       <div className="image-popup">
-        <img src={imageUrl} alt="完整圖片" />
+        <Image src={imageUrl} alt="完整圖片" />
         <button className="close-button" onClick={onClose}>
           <span aria-hidden="true">&times;</span>
         </button>

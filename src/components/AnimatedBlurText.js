@@ -19,7 +19,7 @@ const AnimatedBlurText = ({
       () => Math.random() * (maxBlur - minBlur) + minBlur
     );
     setBlurs(newBlurs);
-  }, [text, minBlur, maxBlur]);
+  }, [text, minBlur, maxBlur, characters]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -35,16 +35,18 @@ const AnimatedBlurText = ({
       }
     );
 
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
+   const node = containerRef.current;
 
-    return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
-      }
-    };
-  }, [threshold]);
+   if (node) {
+     observer.observe(node);
+   }
+
+   return () => {
+     if (node) {
+       observer.unobserve(node);
+     }
+   }
+  }, [threshold, characters]);
 
   if (blurs.length === 0) {
     return <div className={className}>{text}</div>;

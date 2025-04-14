@@ -1,3 +1,4 @@
+import Image from "next/image";
 const RotatingGallery = ({ images }) => {
 
   return (
@@ -6,7 +7,7 @@ const RotatingGallery = ({ images }) => {
         {images &&
           images.map((img, index) => (
             <span style={{ "--i": index + 1 }} key={img}>
-              <img src={img} alt={img} />
+              <Image src={img} alt={img} />
             </span>
           ))}
       </div>

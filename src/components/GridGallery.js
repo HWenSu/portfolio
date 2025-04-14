@@ -1,5 +1,6 @@
 import ImagePopup from "./ImagePopup"; // 導入彈出框組件
 import { useState } from "react";
+import Image from "next/image";
 
 
 const GridGallery = ({ images }) => {
@@ -25,21 +26,21 @@ const GridGallery = ({ images }) => {
         <div>
           {firstRow.map((img) => (
             <article key={img} onClick={() => handleImageClick(img)}>
-              <img src={img} alt={img} />
+              <Image src={img} alt={img} />
             </article>
           ))}
         </div>
         <div>
           {secondRow.map((img) => (
             <article key={img} onClick={() => handleImageClick(img)}>
-              <img src={img} alt={img} />
+              <Image src={img} alt={img} />
             </article>
           ))}
         </div>
         <div>
           {ThirdRow.map((img) => (
             <article key={img} onClick={() => handleImageClick(img)}>
-              <img src={img} alt={img} />
+              <Image src={img} alt={img} />
             </article>
           ))}
         </div>

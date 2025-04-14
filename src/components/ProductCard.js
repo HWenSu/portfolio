@@ -22,7 +22,7 @@ const ProductCard = ({ product }) => {
         </div>
         <div className="title">
           <div>
-            <h3>{productName}</h3> // {product.style_no}
+            <h3>{productName}</h3> - {product.style_no}
           </div>
           <p>{constructure}</p>
         </div>

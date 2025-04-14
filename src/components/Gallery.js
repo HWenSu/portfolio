@@ -29,7 +29,7 @@ const Gallery = ({ images }) => {
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
             >
-              <img src={image} alt='images'/>
+              <Image src={image} alt='images'/>
             </div>
           ))}
       </div>
