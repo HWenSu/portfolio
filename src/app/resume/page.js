@@ -70,7 +70,7 @@ const Resume = () => {
     },
     {
       time: ["2022 Jun", "Present"],
-      url:"https://booking-system-weld-two.vercel.app/",
+      url: "https://booking-system.zeabur.app/",
       name: "線上預約網站 (與後端協作) ",
       content: [
         {

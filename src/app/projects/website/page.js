@@ -8,7 +8,7 @@ const Website = () => {
           <div className="tile">
             <a
               className="tile-link"
-              href="https://booking-system-weld-two.vercel.app/"
+              href="https://booking-system.zeabur.app/"
               target="_blank"
             >
               <Image
