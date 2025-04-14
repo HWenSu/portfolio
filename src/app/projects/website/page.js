@@ -12,6 +12,8 @@ const Website = () => {
               target="_blank"
             >
               <Image
+                width={300}
+                height={100}
                 className="tile-img tile-img5"
                 src="/image/web/w-1.png"
                 alt="Image"
@@ -27,6 +29,8 @@ const Website = () => {
               target="_blank"
             >
               <Image
+                width={300}
+                height={100}
                 className="tile-img tile-img5"
                 src="/image/web/w-2.png"
                 alt="Image"
@@ -42,6 +46,8 @@ const Website = () => {
               target="_blank"
             >
               <Image
+                width={300}
+                height={100}
                 className="tile-img tile-img5"
                 src="/image/web/w-3.png"
                 alt="Image"
@@ -58,6 +64,8 @@ const Website = () => {
               target="_blank"
             >
               <Image
+                width={300}
+                height={100}
                 className="tile-img tile-img5"
                 src="/image/web/w-4.png"
                 alt="Image"
@@ -69,6 +77,8 @@ const Website = () => {
           <div className="tile">
             <a className="tile-link" href="/" target="_blank">
               <Image
+                width={300}
+                height={100}
                 className="tile-img tile-img5"
                 src="/image/web/w-5.png"
                 alt="Image"

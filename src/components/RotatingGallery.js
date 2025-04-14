@@ -7,7 +7,7 @@ const RotatingGallery = ({ images }) => {
         {images &&
           images.map((img, index) => (
             <span style={{ "--i": index + 1 }} key={img}>
-              <Image src={img} alt={img} />
+              <Image width={300} height={100} src={img} alt={img} />
             </span>
           ))}
       </div>

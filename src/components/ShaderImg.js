@@ -181,6 +181,7 @@ const ShaderImg = ({ imgUrl }) => {
   return (
     <div ref={imageContainerRef} className="image-container">
       <Image
+        fill
         ref={imageRef}
         src={imgUrl}
         alt="colab"

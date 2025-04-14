@@ -26,21 +26,21 @@ const GridGallery = ({ images }) => {
         <div>
           {firstRow.map((img) => (
             <article key={img} onClick={() => handleImageClick(img)}>
-              <Image src={img} alt={img} />
+              <Image width={300} height={400} src={img} alt={img} />
             </article>
           ))}
         </div>
         <div>
           {secondRow.map((img) => (
             <article key={img} onClick={() => handleImageClick(img)}>
-              <Image src={img} alt={img} />
+              <Image width={300} height={400} src={img} alt={img} />
             </article>
           ))}
         </div>
         <div>
           {ThirdRow.map((img) => (
             <article key={img} onClick={() => handleImageClick(img)}>
-              <Image src={img} alt={img} />
+              <Image width={300} height={400} src={img} alt={img} />
             </article>
           ))}
         </div>

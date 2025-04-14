@@ -170,7 +170,10 @@ const Resume = () => {
                             contentItem.title !== "專案成果：" ? (
                               <p key={descriptionItem}>{descriptionItem}</p>
                             ) : (
-                              <div className="flex items-center" key={descriptionItem}>
+                              <div
+                                className="flex items-center"
+                                key={descriptionItem}
+                              >
                                 <span className="dots"></span>
                                 <p>{descriptionItem}</p>
                               </div>
@@ -194,7 +197,7 @@ const Resume = () => {
       </section>
       <aside className="col-start-9 col-end-11 pr-[2rem] row-start-1 row-end-4 sticky top-[5rem] self-start">
         <div className=" mb-4 animate-slide-left ">
-          <Image src="/avatar.png" alt="avatar" />
+          <Image fill src="/avatar.png" alt="avatar" />
         </div>
         <div className="pb-6  animate-slide-down">
           <h3 className="divider">EDUCATION</h3>
