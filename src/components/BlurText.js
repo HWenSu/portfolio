@@ -11,7 +11,7 @@ const BlurText = ({ words, minBlur = 0, maxBlur = 10 }) => {
       () => Math.random() * (maxBlur - minBlur) + minBlur
     );
     setBlurs(newBlurs);
-  }, [words, minBlur, maxBlur, characters]); // 當 props 改變時重新執行
+  }, [words, minBlur, maxBlur]); // 當 props 改變時重新執行
 
   // 如果 blurs 為空（例如在 SSR 期間），渲染不帶模糊的內容
   if (blurs.length === 0) {

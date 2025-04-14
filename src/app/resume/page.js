@@ -1,6 +1,6 @@
 import CategoryCard from "@/components/CategoryCard";
 
-const page = () => {
+const Resume = () => {
   const skills = ["Adobe Illustrator 、Photoshop、After Effect、Figma", "HTML5、CSS3、JavaScript", "React、Next 框架使用", "Git 版本控制", "API串接", "Tailwind 、 Shadcn", "RWD設計經驗"]
 
   const experience = [
@@ -226,4 +226,4 @@ const page = () => {
   );
 }
 
-export default page
+export default Resume;

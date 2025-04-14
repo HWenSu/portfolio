@@ -1,5 +1,5 @@
 
-const page = () => {
+const Website = () => {
   return (
     <div className="relative bg-black/90">
       <div className="website-grid image-grid">
@@ -80,4 +80,4 @@ const page = () => {
   );
 }
 
-export default page
+export default Website;

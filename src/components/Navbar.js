@@ -26,7 +26,7 @@ const Navbar = () => {
               onMouseEnter={() => setIsProductsHover(true)}
               onMouseLeave={() => setIsProductsHover(false)}
             >
-              <Link href="/products" className="flex">
+              <Link href="/projects/fashion" className="flex">
                 <span className="mr-2">PROJECTS</span>
                 <Image
                   className="invert "

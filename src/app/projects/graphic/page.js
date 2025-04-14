@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import GridGallery from "@/components/GridGallery";
 
 
-const page = () => {
+const Graphic = () => {
 
   //從API獲取GALLERY圖片
     const [images, setImages] = useState([]);
@@ -49,4 +49,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Graphic;

@@ -4,7 +4,7 @@ import BlurText from "@/components/BlurText";
 import GridGallery from "@/components/GridGallery";
 import { Images } from "lucide-react";
 
-const page = () => {
+const Visual = () => {
 
     //從API獲取GALLERY圖片
       const [images, setImages] = useState([]);
@@ -66,4 +66,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Visual;

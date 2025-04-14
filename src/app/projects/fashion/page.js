@@ -8,7 +8,7 @@ import CustomCursor from "@/components/CustomCursor";
 import { useCustomCursor } from "@/hooks/useCustomCursor";
 import Card3DHover from "@/components/Card3DHover";
 
-const page = () => {
+const Fashion = () => {
   // 調用自訂義鼠標Hook
   const { cursorActive, cursorText, handleCursor, resetCursor } =
     useCustomCursor();
@@ -51,4 +51,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Fashion;
