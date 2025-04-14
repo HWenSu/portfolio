@@ -208,12 +208,30 @@
       transform: scale(5);
     }
   }
+
   .animate-scale-up {
     animation: scale-up;
     animation-timeline: scroll(block);
     animation-range: 0% 50%;
     animation-fill-mode: forwards; /* 動畫結束後保持最終狀態 */
   }
+
+    @keyframes slide-down {
+    0% {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+.animate-slide-down {
+  animation: slide-down 0.85s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+
   @keyframes broaden {
     0% {
       width: 10rem;
@@ -258,6 +276,36 @@
     animation-fill-mode: both; /* 結合 backwards 和 forwards */
     animation-range: calc(var(--animation-index) * 1.2%)
       calc(3% + (var(--animation-index) + 1) * 1.2%); /* 根據單詞索引錯開動畫範圍 */
+  }
+
+  @keyframes slide-left {
+    from {
+      opacity: 0;
+      transform: translateX(200px)
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  .animate-slide-left {
+    animation: slide-left 0.85s cubic-bezier(0.65, 0, 0.35, 1);
+    animation-delay: 0.2s; 
+  }
+
+    @keyframes slide-right {
+    from {
+      opacity: 0;
+      transform: translateX(-200px)
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  .animate-slide-right {
+    animation: slide-right 0.85s cubic-bezier(0.65, 0, 0.35, 1);
+    animation-delay: 0.2s; 
   }
 }
 
@@ -1061,5 +1109,68 @@ cursor: pointer;
 
 /* resume page */
 .resume-container{
-  @apply bg-[#DADBDD] min-h-screen grid grid-cols-12 px-[4rem]
+  @apply bg-[#DADBDD] min-h-screen grid grid-cols-12 px-[4rem] pt-[10rem]
 }
+
+.resume-container h3 {
+  @apply p-1 bg-[#DADBDD] z-[2] tracking-[0.4rem] font-bold
+}
+
+.resume-container h4 {
+  @apply p-1 bg-[#DADBDD] z-[2] tracking-[0.1rem] font-bold
+}
+
+.resume-container p, li {
+  @apply leading-[1.8rem]
+}
+
+
+.experience-project-block{
+  @apply grid grid-cols-[6rem_1fr] pb-[4rem]
+}
+
+.timeline {
+  @apply text-right opacity-50 pr-4 text-sm
+}
+
+.dots {
+  @apply w-[4px] h-[4px] rounded-full bg-black mr-[1rem]
+}
+
+.left-title{
+  @apply sticky top-[10rem]
+}
+
+.divider {
+  @apply border-b border-black mb-2
+}
+
+.resume-category ul{
+  @apply scale-50 absolute inset-0 -translate-x-1/4 translate-y-1/2 grayscale
+}
+
+
+.custom-btn {
+@apply flex justify-end mr-[5rem]
+}
+
+.custom-btn button {
+  @apply bg-black/80 px-[1.8rem] py-[0.5rem] rounded-[10px] text-background
+}
+
+.custom-btn button:hover {
+  @apply  -translate-x-[1rem] transition-all duration-300 ease-in-out 
+}
+
+.name {
+  @apply font-bold text-[1.5rem] tracking-[0.3rem] text-right
+}
+
+
+
+
+
+
+/* .side-project, .side-project h3 ,.side-project h4 {
+ @apply bg-[#d6d7d8]
+} */
