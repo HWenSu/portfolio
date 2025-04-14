@@ -167,9 +167,9 @@ const page = () => {
                         <div>
                           {contentItem.description.map((descriptionItem) =>
                             contentItem.title !== "專案成果：" ? (
-                              <p>{descriptionItem}</p>
+                              <p key={descriptionItem}>{descriptionItem}</p>
                             ) : (
-                              <div className="flex items-center">
+                              <div className="flex items-center" key={descriptionItem}>
                                 <span className="dots"></span>
                                 <p>{descriptionItem}</p>
                               </div>

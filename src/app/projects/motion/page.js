@@ -88,7 +88,7 @@ const page = () => {
           <div className="about-item">
             <div className="col-start-2">
               <h3 className="about-large-w ">DESIGN </h3>
-              <h3>MEN'S WOMEN'S</h3>
+              <h3>MOTION</h3>
               <h3>GRAPHIC</h3>
             </div>
             <h2 className="about-item-center">SU HSIAO WEN</h2>

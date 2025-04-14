@@ -92,13 +92,13 @@ export default function Home() {
           </aside>
           <div className="hero-grid-2">
             <div className="hero-center-text">
-              <p>// GRAPHIC</p>
+              <p>GRAPHIC</p>
             </div>
             <div className="hero-center-text">
-              <p> // FASHION</p>
+              <p>FASHION</p>
             </div>
             <div className="hero-center-text">
-              <p>// CODING</p>
+              <p>CODING</p>
             </div>
           </div>
           <div className="hero-grid-3"></div>
