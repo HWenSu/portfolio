@@ -12,8 +12,8 @@ const quantico = Quantico({
 
 
 export const metadata = {
-  title: "Colab Design",
-  description: "Far Eastern New Century innovation team",
+  title: "SU HSIAO WEN PORTFOLIO",
+  description: "Su Hsiao Wen-graphic, fashion, website portfolio",
 };
 
 export default function RootLayout({ children }) {

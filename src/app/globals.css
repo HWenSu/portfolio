@@ -1151,7 +1151,7 @@ cursor: pointer;
 
 
 .custom-btn {
-@apply flex justify-end mr-[5rem]
+@apply place-self-end mr-[5rem]
 }
 
 .custom-btn button {

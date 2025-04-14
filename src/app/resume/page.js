@@ -44,12 +44,14 @@ const Resume = () => {
   const sideProjects = [
     {
       time: ["2022 Jun", "Present"],
+      url: "https://picture-web.vercel.app/",
       name: "一站式圖片管理網站 ",
       content: [
         {
           title: "專案描述：",
-          description:
-            ["作為設計師，時常有需要向外找靈感與向內對齊風格的需求，所以設計這個網站時希望能整合 [ 開發階段圖片搜尋 ] + [ 聚焦設計收藏功能 ] + [ 隨時查看目前風格的作品集圖片頁面 ] ，另外圖片除了可以單張分享外，也可以將上傳的作品集頁面整頁發送給訪客預覽。"],
+          description: [
+            "作為設計師，時常有需要向外找靈感與向內對齊風格的需求，所以設計這個網站時希望能整合 [ 開發階段圖片搜尋 ] + [ 聚焦設計收藏功能 ] + [ 隨時查看目前風格的作品集圖片頁面 ] ，另外圖片除了可以單張分享外，也可以將上傳的作品集頁面整頁發送給訪客預覽。",
+          ],
         },
         {
           title: "使用技術：",
@@ -68,12 +70,14 @@ const Resume = () => {
     },
     {
       time: ["2022 Jun", "Present"],
+      url:"https://booking-system-weld-two.vercel.app/",
       name: "線上預約網站 (與後端協作) ",
       content: [
         {
           title: "專案描述：",
-          description:
-            ["開發預約系統，整合時間選擇器與使用者管理。資料處理採模板模式，前端進行動態渲染。"],
+          description: [
+            "開發預約系統，整合時間選擇器與使用者管理。資料處理採模板模式，前端進行動態渲染。",
+          ],
         },
         {
           title: "使用技術：",
@@ -184,7 +188,9 @@ const Resume = () => {
                     ))}
                   </ul>
                   <div className="custom-btn">
-                    <button>Visit</button>
+                    <a target="_blank" href={item.url}>
+                      <button>Visit</button>
+                    </a>
                   </div>
                 </div>
               </li>
@@ -197,7 +203,7 @@ const Resume = () => {
       </section>
       <aside className="col-start-9 col-end-11 pr-[2rem] row-start-1 row-end-4 sticky top-[5rem] self-start">
         <div className=" mb-4 animate-slide-left ">
-          <Image fill src="/avatar.png" alt="avatar" />
+          <Image width={300} height={400} src="/avatar.png" alt="avatar" />
         </div>
         <div className="pb-6  animate-slide-down">
           <h3 className="divider">EDUCATION</h3>

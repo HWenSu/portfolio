@@ -6,7 +6,8 @@ const Card3DHover = () => {
       <div className="card">
         <div className="wrapper">
           <Image
-            fill 
+            width={300}
+            height={400}
             alt="image"
             src="/image/jac/The New Black拷貝2.jpeg"
             className="cover-image"
@@ -14,7 +15,8 @@ const Card3DHover = () => {
         </div>
         <p className="title"> SINGLE JERSEY JAC</p>
         <Image
-          fill 
+          width={300}
+          height={400}
           alt="image"
           src="/image/jac/TNB_background_removed (4).png"
           className="character"
@@ -23,7 +25,8 @@ const Card3DHover = () => {
       <div className="card">
         <div className="wrapper">
           <Image
-            fill 
+            width={300}
+            height={400}
             alt="image"
             src="/image/jac/The New Black (1).jpeg"
             className="cover-image"
@@ -31,7 +34,8 @@ const Card3DHover = () => {
         </div>
         <p className="title"> ENGINEERING JAC</p>
         <Image
-          fill 
+          width={300}
+          height={400}
           alt="image"
           src="/image/jac/TNB_background_removed (6).png"
           className="character"
