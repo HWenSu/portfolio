@@ -8,14 +8,15 @@ const IntroList = ({invert, listItem, videoUrl}) => {
 
   return (
     <section className={`print-tech-container ${invert && invert} `}>
-      <div className="left-aside w-[40vw] flex md:ml-20 ">
+      <div className="left-aside w-[50vw] flex md:ml-20 ">
         <video
-          src={"/video/P-E.mp4"}
+          src={videoUrl}
+          playsInline
           autoPlay
           muted
           loop
           controls
-          className={`w-full h-auto ${invert&& invert}`}
+          className={`w-full h-auto ${invert && invert}`}
         />
       </div>
       <div className="right-aside">

@@ -45,7 +45,7 @@ export default function Home() {
   };
 
   return (
-    <div className="home-page-container">
+    <div className="home-page-container overflow-hidden">
       {/* 自訂義滑鼠 */}
       <CustomCursor active={cursorActive} cursorText={cursorText} />
       {/* 影片區塊 */}
@@ -55,6 +55,7 @@ export default function Home() {
       >
         <video
           src={"/video/Final Comp.mp4"}
+          playsInline
           autoPlay
           muted
           loop
@@ -165,7 +166,7 @@ export default function Home() {
         <div className=" bg-[#232323] z-10 py-15 rounded-t-[8rem]  mx-[2rem]">
           <IntroList
             invert={"invert"}
-            videoUrl={"/video/Colab2022.mp4"}
+            videoUrl={"/video/P-E.mp4"}
             listItem={["Innovation", "Flexible", "Efficient"]}
           />
         </div>

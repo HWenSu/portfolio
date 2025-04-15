@@ -104,6 +104,7 @@ const Motion = () => {
           {videoSrc.map((src) => (
             <video
               src={`/video/${src}.mp4`}
+              playsInline
               autoPlay
               muted
               controls

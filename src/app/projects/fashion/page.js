@@ -18,10 +18,10 @@ const Fashion = () => {
       {/* 自訂義滑鼠 */}
       <CustomCursor active={cursorActive} cursorText={cursorText} />
       {/* 介紹區塊 */}
-      <section className="w-full h-[90vh]  ">
+      <section className=" w-full h-[50vh] md:h-[90vh]  ">
         <div className="w-full h-full bg-black text-white scroll-section flex flex-col justify-between pb-[10rem]">
           <BlurText words={"JACQUARD DESIGN"} />
-          <Card3DHover/>
+          <Card3DHover />
         </div>
       </section>
       {/* 商品列表區塊 */}
@@ -31,19 +31,15 @@ const Fashion = () => {
       {/* 技法選單區塊 */}
       <section className=" my-[15rem] relative">
         <IntroList
-          videoUrl={"/video/Colab2022.mp4"}
-          listItem={[
-            "Create Volume with Print",
-            "Soft Texture",
-            "Special Techniques",
-          ]}
+          videoUrl={"/video/664F72E78AD00091AABA494B5D381A1F73B19B1F.mp4"}
+          listItem={["JACQUARD", "QUILTED", "LAMINATION"]}
         />
       </section>
       {/* 滾動式差背景圖片區塊 */}
       <div className="relative w-full h-[70vh] overflow-hidden bg-black">
         <div className="w-full h-full bg-[url('/image/print-hero.jpg')] bg-cover bg-center bg-fixed">
           <div className="w-full h-full flex items-center justify-center text-white text-4xl font-bold">
-            Runway Style
+            Textile Design
           </div>
         </div>
       </div>

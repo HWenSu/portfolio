@@ -494,7 +494,7 @@ md:w-[5em]
 
 /* About Page */
 .about-page-container {
-  @apply relative bg-black w-full min-h-screen text-white;
+  @apply relative bg-black w-full min-h-screen text-white overflow-hidden;
 }
 
 .about-design-bg-img {
@@ -506,7 +506,7 @@ md:w-[5em]
 }
 
 .about-items-container {
-  @apply flex flex-col relative z-[10] pt-[30vh] pointer-events-none;
+  @apply flex flex-col relative z-[10] pt-[10vh]  md:pt-[30vh] pointer-events-none;
 }
 
 .about-design-section .image-container {
@@ -524,7 +524,7 @@ md:w-[5em]
 }
 
 .about-item {
-  @apply grid grid-cols-5  items-center gap-6 h-[6rem] border-b-1 border-white/50  px-[2vw];
+  @apply grid grid-cols-5 items-center gap-6 h-[6rem] border-b-1 border-white/50  px-[2vw] text-center;
 }
 
 .about-item h2 {
@@ -588,11 +588,12 @@ md:w-[5em]
 /* Product 頁面 */
 /* Product Card */
 .products-list-container {
-  @apply grid grid-cols-5 gap-[4rem] px-[4vw] justify-center items-center my-[4rem];
+  @apply grid grid-cols-2 gap-[4rem] px-[4vw] justify-center items-center 
+  md:grid-cols-5 md:my-[4rem]
 }
 
 .product-card {
-  @apply relative w-full h-[22vw];
+  @apply relative h-[50vw] w-full md:h-[22vw];
 }
 
 .product-img-container {
@@ -729,7 +730,7 @@ md:w-[5em]
 /* Print Page */
 
 .print-page-container {
-  @apply pt-[15vh];
+  @apply pt-[10vh] ;
 }
 
 .print-page-container h2 {
@@ -737,7 +738,7 @@ md:w-[5em]
 }
 
 .print-page-container .blur-text-container {
-  @apply text-[6rem] px-[8rem] py-[18rem];
+  @apply text-[6rem] px-8 md:px-[8rem] md:py-[18rem];
 }
 
 .print-tech-container {
@@ -757,7 +758,7 @@ md:w-[5em]
 }
 
 .light-text-container {
-  @apply w-[40vw] text-[1.2rem] text-[#ededed] py-8 md:w-[28vw];
+  @apply w-[50vw] text-[1.2rem] text-[#ededed] py-8 md:w-[28vw];
 }
 
 /* Gallery */
@@ -785,15 +786,9 @@ md:w-[5em]
 
 /* Card 3D Hover */
 .card {
-  width: 25rem;
-  height: var(--card-height);
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  padding: 0 36px;
   perspective: 2500px;
-  margin: 0 50px;
+  @apply w-[25rem] h-[var(--card-height)] relative flex justify-center items-end px-[36px] mx-4
+  md:mx-[50px]  
 }
 
 .cover-image {
@@ -892,6 +887,8 @@ md:w-[5em]
   -webkit-box-direction: normal;
   flex-direction: row;
   flex-wrap: wrap;
+
+  @apply pt-[20vh] translate-x-1/5 overflow-hidden
 }
 
 .tile, .tile-link{
@@ -899,11 +896,8 @@ md:w-[5em]
 }
 
 .grid-block {
-  width: 60%;
-  height: 20rem;
-  padding: 1rem;
   border-color: red;
-  overflow: hidden;
+  @apply w-[50%] h-[20rem] p-[1rem] overflow-hidden md:w-[60%] 
 }
 
 .image-grid {
@@ -984,12 +978,8 @@ md:w-[5em]
 }
 
 .r-gallery span{
-  position:absolute;
-  width:100%;
-  height:100%;
-  transform-origin:center;
-  transform-style:preserve-3d;
   transform:rotateY(calc(var(--i) * 45deg)) translateZ(380px);
+  @apply absolute w-full h-full origin-center transform-3d
 }
 
 .r-gallery span img{
@@ -1017,7 +1007,14 @@ md:w-[5em]
   max-width: 800px;
   display: grid;
   gap: var(--_gap);
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 響應式列數 */
+  /* grid-template-columns: repeat(auto-fit, minmax(50px, 1fr)); 響應式列數 */
+}
+
+@media (max-width: 480px) {
+  .g-gallery {
+    grid-template-columns: repeat(3, 1fr); /* 或 1 欄 */
+    padding: 0 3rem;
+  }
 }
 
 @media (min-width: 720px) {
@@ -1097,8 +1094,8 @@ cursor: pointer;
   border-radius: 8px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   position: relative;
-  max-width: 50vw; /* 限制最大寬度 */
-  max-height: 90%; /* 限制最大高度 */
+  max-width: 80vw; /* 限制最大寬度 */
+  max-height: 60vh; /* 限制最大高度 */
 }
 
 .image-popup img {
@@ -1129,7 +1126,7 @@ cursor: pointer;
 
 /* resume page */
 .resume-container{
-  @apply bg-[#DADBDD] min-h-screen grid grid-cols-12 px-[4rem] pt-[10rem]
+  @apply bg-[#DADBDD] min-h-screen flex flex-col md:grid grid-cols-12 px-[5rem] pt-[10rem]  
 }
 
 .resume-container h3 {
@@ -1141,7 +1138,7 @@ cursor: pointer;
 }
 
 .resume-container p, li {
-  @apply leading-[1.8rem]
+  @apply leading-[2]
 }
 
 
@@ -1166,7 +1163,7 @@ cursor: pointer;
 }
 
 .resume-category ul{
-  @apply scale-50 absolute inset-0 -translate-x-1/4 translate-y-1/2 grayscale
+  @apply scale-50 absolute inset-0 -translate-x-1/4 translate-y-1/2 grayscale flex-row
 }
 
 

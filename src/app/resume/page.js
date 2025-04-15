@@ -98,9 +98,40 @@ const Resume = () => {
 
   return (
     <div className="resume-container">
-      {/* Statement */}
-      <section className="col-start-3 col-end-9 px-[2rem] pb-[3rem]">
+      <aside className="col-start-9 col-end-11 md:pr-[2rem] row-start-1 row-end-4 md:sticky md:top-[5rem]  md:self-start ">
         <h2 className="name"> 蘇筱雯 ELVA</h2>
+        <div className=" mb-4 animate-slide-left w-[20rem] ">
+          <Image width={300} height={400} src="/avatar.png" alt="avatar" />
+        </div>
+        <div className="pb-6  animate-slide-down">
+          <h3 className="divider">EDUCATION</h3>
+          <p>實踐大學 服裝設計學系 畢業</p>
+          <span>2014</span>
+          <span>2018</span>
+        </div>
+        <div className="pb-6">
+          <h3 className="divider">SKILLS</h3>
+          <ul>
+            {skills.map((skill, index) => (
+              <li
+                key={skill}
+                className="flex items-center animate-slide-down"
+                style={{ animationDelay: `${index * 0.2}s` }}
+              >
+                <span className="dots"></span>
+                <p>{skill}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="pb-6  animate-slide-down">
+          <h3 className="divider">LANGUAGES</h3>
+          <p>English / 中</p>
+          <p>IELTS 6</p>
+        </div>
+      </aside>
+      {/* Statement */}
+      <section className="col-start-3 col-end-9 md:px-[2rem] pb-[3rem]">
         <h3 className="divider">STATEMENT</h3>
         <p className="animate-slide-right">
           我是專注於視覺與數位設計的創作者，擅長學習新技能，涵蓋Adobe
@@ -201,37 +232,6 @@ const Resume = () => {
           <CategoryCard />
         </div>
       </section>
-      <aside className="col-start-9 col-end-11 pr-[2rem] row-start-1 row-end-4 sticky top-[5rem] self-start">
-        <div className=" mb-4 animate-slide-left ">
-          <Image width={300} height={400} src="/avatar.png" alt="avatar" />
-        </div>
-        <div className="pb-6  animate-slide-down">
-          <h3 className="divider">EDUCATION</h3>
-          <p>實踐大學 服裝設計學系 畢業</p>
-          <span>2014</span>
-          <span>2018</span>
-        </div>
-        <div className="pb-6">
-          <h3 className="divider">SKILLS</h3>
-          <ul>
-            {skills.map((skill, index) => (
-              <li
-                key={skill}
-                className="flex items-center animate-slide-down"
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
-                <span className="dots"></span>
-                <p>{skill}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="pb-6  animate-slide-down">
-          <h3 className="divider">LANGUAGES</h3>
-          <p>English / 中</p>
-          <p>IELTS 6</p>
-        </div>
-      </aside>
     </div>
   );
 }

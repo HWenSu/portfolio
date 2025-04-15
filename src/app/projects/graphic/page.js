@@ -40,11 +40,13 @@ const Graphic = () => {
       </section> */}
 
       {/* Rotating Gallery */}
-      <section className="flex justify-center mt-[10rem]">
+      <section className="flex justify-center mt-[10rem] scale-40 md:scale-100">
         <RotatingGallery images={images.slice(0, 9)} />
       </section>
       {/* Grid Gallery */}
-      <GridGallery images={images} />
+      <section >
+        <GridGallery images={images} />
+      </section>
     </div>
   );
 };

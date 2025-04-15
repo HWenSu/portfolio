@@ -8,7 +8,7 @@ const Gallery = ({ images, isDesktop }) => {
   const [hoveredIndex, setHoveredIndex] = useState(4); //預設
 
   const handleMouseEnter = (index) => {
-    if(isDesktop) setHoveredIndex(index);
+    if (isDesktop) setHoveredIndex(index);
   };
 
   const handleMouseLeave = () => {
@@ -18,7 +18,7 @@ const Gallery = ({ images, isDesktop }) => {
   // 處理手機點擊
   const handleClick = (index) => {
     // 手機：點了再點同一張就取消選取
-   if ( !isDesktop) setHoveredIndex((prev) => (prev === index ? 4 : index));
+    if (!isDesktop) setHoveredIndex((prev) => (prev === index ? 4 : index));
   };
 
   return (
