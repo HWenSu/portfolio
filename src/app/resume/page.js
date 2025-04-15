@@ -2,7 +2,15 @@ import CategoryCard from "@/components/CategoryCard";
 import Image from "next/image";
 
 const Resume = () => {
-  const skills = ["Adobe Illustrator 、Photoshop、After Effect、Figma", "HTML5、CSS3、JavaScript", "React、Next 框架使用", "Git 版本控制", "API串接", "Tailwind 、 Shadcn", "RWD設計經驗"]
+  const skills = [
+    "Adobe Illustrator 、Photoshop、After Effect、Figma",
+    "HTML5、CSS3、JavaScript",
+    "React、Next 框架使用",
+    "Git 版本控制",
+    "API串接",
+    "Tailwind 、 Shadcn",
+    "RWD設計經驗",
+  ];
 
   const experience = [
     {
@@ -95,7 +103,6 @@ const Resume = () => {
     },
   ];
 
-
   return (
     <div className="resume-container">
       <aside className="col-start-9 col-end-11 md:pr-[2rem] row-start-1 row-end-4 md:sticky md:top-[5rem]  md:self-start ">
@@ -177,7 +184,7 @@ const Resume = () => {
         <h3 className="left-title">SIDE PROJECTS</h3>
         <span className="border-l border-black absolute h-full left-1/2 "></span>
       </div>
-      <section className="col-start-3 col-end-9 flex flex-col h-[100vh] side-project">
+      <section className="col-start-3 col-end-9 flex flex-col side-project">
         <article>
           <ul>
             {sideProjects.map((item, index) => (
@@ -234,6 +241,6 @@ const Resume = () => {
       </section>
     </div>
   );
-}
+};
 
 export default Resume;

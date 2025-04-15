@@ -1126,7 +1126,7 @@ cursor: pointer;
 
 /* resume page */
 .resume-container{
-  @apply bg-[#DADBDD] min-h-screen flex flex-col md:grid grid-cols-12 px-[5rem] pt-[10rem]  text-[2.2rem] md:text-[1rem]
+  @apply bg-[#DADBDD] flex flex-col md:grid grid-cols-12 px-[5rem] py-[10rem]  text-[2.2rem] md:text-[1rem]
 }
 
 .resume-container h3 {
@@ -1162,8 +1162,12 @@ cursor: pointer;
   @apply border-b border-black mb-2
 }
 
+.resume-category{
+@apply h-[20vh]
+}
+
 .resume-category ul{
-  @apply scale-50 absolute inset-0 -translate-x-1/4 translate-y-1/2 grayscale flex-row
+  @apply scale-50 absolute inset-0 -translate-x-1/4  grayscale flex-row 
 }
 
 

@@ -28,6 +28,7 @@ const Visual = () => {
       {/* 背景影片 */}
       <video
         src="/video/766144466.768551.mp4"
+        playsInline
         autoPlay
         muted
         loop
