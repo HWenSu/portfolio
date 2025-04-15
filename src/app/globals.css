@@ -1126,7 +1126,7 @@ cursor: pointer;
 
 /* resume page */
 .resume-container{
-  @apply bg-[#DADBDD] min-h-screen flex flex-col md:grid grid-cols-12 px-[5rem] pt-[10rem]  
+  @apply bg-[#DADBDD] min-h-screen flex flex-col md:grid grid-cols-12 px-[5rem] pt-[10rem]  text-[2.2rem] md:text-[1rem]
 }
 
 .resume-container h3 {
@@ -1147,7 +1147,7 @@ cursor: pointer;
 }
 
 .timeline {
-  @apply text-right opacity-50 pr-4 text-sm
+  @apply text-right opacity-50 pr-4 text-2xl md:text-sm
 }
 
 .dots {

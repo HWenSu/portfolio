@@ -6,7 +6,7 @@ const Resume = () => {
 
   const experience = [
     {
-      time: ["2022 Jun", "Present"],
+      time: ["2022", "Present"],
       company: "視覺設計師 / 遠東新世紀股份有限公司",
       content: [
         "網頁設計 | 網頁設計,並用Next完成前端架設",
@@ -18,7 +18,7 @@ const Resume = () => {
       ],
     },
     {
-      time: ["2022 Jun", "Present"],
+      time: ["2021", "2022"],
       company: "服裝設計師 / MO-BO_米果服飾開發有限公司",
       content: [
         "市場蒐集 | 國內外流行商品資料搜集、競品商品觀察與分析",
@@ -29,7 +29,7 @@ const Resume = () => {
       ],
     },
     {
-      time: ["2022 Jun", "Present"],
+      time: ["2020", "2021"],
       company: "商品企劃設計 / 紘懋食品有限公司",
       content: [
         "平面設計 | CIS設計、Logo設計、包裝設計、商品組圖及Banner製作 ",
@@ -43,7 +43,7 @@ const Resume = () => {
 
   const sideProjects = [
     {
-      time: ["2022 Jun", "Present"],
+      time: ["2024 Aug", "2024 Sep"],
       url: "https://picture-web.vercel.app/",
       name: "一站式圖片管理網站 ",
       content: [
@@ -69,7 +69,7 @@ const Resume = () => {
       ],
     },
     {
-      time: ["2022 Jun", "Present"],
+      time: ["2024 Sep", "2024 Dec"],
       url: "https://booking-system.zeabur.app/",
       name: "線上預約網站 (與後端協作) ",
       content: [
@@ -196,7 +196,7 @@ const Resume = () => {
                   <ul>
                     {item.content.map((contentItem, index) => (
                       <div
-                        className="grid grid-cols-[6rem_1fr]"
+                        className="grid md:grid-cols-[6rem_1fr]"
                         key={`${contentItem}- ${index}`}
                       >
                         <p>{contentItem.title}</p>

@@ -52,6 +52,7 @@ const Visual = () => {
       <div className="relative w-full h-[70vh] overflow-hidden bg-black">
         <video
           src="/video/766143464.665555.mp4"
+          playsInline
           autoPlay
           muted
           loop
