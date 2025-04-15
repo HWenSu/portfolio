@@ -8,7 +8,7 @@ const IntroList = ({invert, listItem, videoUrl}) => {
 
   return (
     <section className={`print-tech-container ${invert && invert} `}>
-      <div className="left-aside  w-[40vw] flex ml-20 ">
+      <div className="left-aside w-[40vw] flex md:ml-20 ">
         <video
           src={"/video/P-E.mp4"}
           autoPlay

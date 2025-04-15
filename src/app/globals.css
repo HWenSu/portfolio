@@ -234,10 +234,10 @@
 
   @keyframes broaden {
     0% {
-      width: 10rem;
+      width: 20%;
     }
     100% {
-      width: 40rem;
+      width: 50%;
     }
   }
   .animate-scroll-broaden {
@@ -246,6 +246,7 @@
     animation-range: entry 60% entry 110%;
     animation-fill-mode: forwards;
   }
+
   @keyframes blur-text {
     from {
       filter: blur(var(--initial-blur)); /* 從隨機模糊值開始 */
@@ -328,9 +329,9 @@
 .image-container {
   @apply relative bg-transparent overflow-hidden
     /* 手機版 (預設) */
-    w-[90vw] h-[90vh]
+    w-[90vw] h-[90vh] hidden
     /* 平板 */
-    md:w-[600px]
+    md:w-[600px] md:block
     /* 小螢幕電腦 */
     lg:w-[700px]
     /* 大螢幕 */
@@ -438,7 +439,8 @@
 }
 
 .hero-grid {
-  @apply grid grid-cols-[0.1fr_0.85fr_1fr_1fr_1fr_1fr] w-full min-h-screen;
+  @apply grid w-full min-h-screen 
+   md:grid-cols-[0.1fr_0.85fr_1fr_1fr_1fr_1fr] ;
 }
 
 .grid-item {
@@ -450,11 +452,16 @@
 }
 
 .hero-grid-1 {
-  @apply flex flex-col justify-center items-center text-center mt-[9rem];
+  @apply flex flex-col justify-center items-center text-center 
+  z-2
+  md:mt-[9rem];
 }
 
 .hero-grid-2 {
-  @apply flex flex-col justify-around text-sm pt-[30vh];
+  @apply flex  justify-around 
+  row-start-1 pt-[5vh] text-xl
+  md:flex-col md:col-start-3 md:pt-[30vh] md:text-sm 
+  ;
 }
 
 .hero-center-image {
@@ -466,11 +473,23 @@
 }
 
 .hero-grid-5 {
-  @apply flex flex-col justify-around pt-[20vh] pr-[8vw] pb-[10vh] text-sm;
+  @apply flex flex-col justify-around text-xl items-center text-center gap-6 py-10
+  md:text-sm
 }
 
 .hero-grid-5 h2 {
-  @apply font-bold;
+  @apply font-bold ;
+}
+
+.home-blur-info-card{
+  @apply bg-[#E1E1E1]  flex flex-col 
+  pt-[5rem] text-[2rem] 
+  md:pt-[20rem]  md:text-[4rem] 
+}
+
+.blur-img-container{
+@apply w-[3rem] overflow-hidden
+md:w-[5em]
 }
 
 /* About Page */
@@ -539,11 +558,11 @@
 /* Product 頁面 */
 /* Category Card */
 .category-cards-container {
-  @apply flex mx-auto w-[70vw] justify-between items-center pt-[8rem];
+  @apply flex mx-auto w-[70vw] justify-between items-center pt-[8rem] flex-col md:flex-row;
 }
 
 .category-card {
-  @apply relative bg-gray-200 m-2 w-[20vw] max-h-[70vh] overflow-hidden;
+  @apply relative bg-gray-200 m-8 w-[40vw]  overflow-hidden md:w-[20vw] md:max-h-[70vh] md:m-2 ;
 }
 
 .category-card::after {
@@ -722,7 +741,7 @@
 }
 
 .print-tech-container {
-  @apply flex justify-between;
+  @apply flex flex-col items-center justify-between md:flex-row;
 }
 
 .print-tech-title {
@@ -738,13 +757,13 @@
 }
 
 .light-text-container {
-  @apply w-[28vw] text-[1.2rem] text-[#ededed];
+  @apply w-[40vw] text-[1.2rem] text-[#ededed] py-8 md:w-[28vw];
 }
 
 /* Gallery */
 
 .gallery-container {
-  @apply absolute top-1/2 left-1/2 -translate-1/2 mx-auto py-[1rem] px-[0.5rem] flex justify-center w-[60vw] h-[50vh];
+  @apply absolute top-1/2 left-1/2 -translate-1/2 mx-auto py-[1rem] px-[0.5rem] flex justify-center w-[80vw] h-[25vh] md:h-[50vh];
 }
 
 .gallery {
@@ -752,7 +771,8 @@
 }
 
 .gallery-item {
-  @apply flex justify-center items-center flex-[0_1_1rem] mx-[0.5rem] my-0 overflow-hidden transition-[flex] duration-100 ease-[cubic-bezier(0.75,0.82,0.165,1)] bg-white;
+  @apply flex justify-center items-center flex-[0_1_2rem] mx-[0.5rem] my-0 overflow-hidden transition-[flex] duration-100 ease-[cubic-bezier(0.75,0.82,0.165,1)] bg-white
+   md:flex-[0_1_1rem];
 }
 
 .gallery-item img {
@@ -760,7 +780,7 @@
 }
 
 .hover-item {
-  @apply flex-[1_1_20rem];
+  @apply flex-[1_1_50rem] md:flex-[1_1_20rem];
 }
 
 /* Card 3D Hover */

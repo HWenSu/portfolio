@@ -10,8 +10,10 @@ import { useCustomCursor } from "@/hooks/useCustomCursor";
 import Gallery from "@/components/Gallery";
 import { useEffect, useState } from "react";
 
-
 export default function Home() {
+  // 預設是電腦
+  const [isDesktop, setIsDesktop] = useState(true);
+
   // 調用自訂義鼠標Hook
   const { cursorActive, cursorText, handleCursor, resetCursor } =
     useCustomCursor();
@@ -26,29 +28,42 @@ export default function Home() {
       .catch((err) => console.error("Error fetching images:", err));
   }, []);
 
+  // 判斷
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(hover: hover)");
+    setIsDesktop(mediaQuery.matches);
+
+    const handler = (e) => setIsDesktop(e.matches);
+    mediaQuery.addEventListener("change", handler);
+
+    return () => mediaQuery.removeEventListener("change", handler);
+  }, []);
+
+  // 封裝客製化滑鼠函式
+  const getMouseEvents = (enterFn, leaveFn) => {
+    return isDesktop ? { onMouseEnter: enterFn, onMouseLeave: leaveFn } : {};
+  };
+
   return (
     <div className="home-page-container">
       {/* 自訂義滑鼠 */}
       <CustomCursor active={cursorActive} cursorText={cursorText} />
       {/* 影片區塊 */}
       <section
-        className="video-section cursor-none"
-        onMouseEnter={() => handleCursor("Scroll")}
-        onMouseLeave={resetCursor}
+        className="video-section cursor-none relative  h-screen"
+        {...getMouseEvents(() => handleCursor("Scroll"), resetCursor)}
       >
         <video
           src={"/video/Final Comp.mp4"}
           autoPlay
           muted
           loop
-          className="w-full h-auto sticky top-0"
+          className="w-full h-full object-cover"
         />
-        <div className="h-[30vh] z-10 relative">
-          <div className="sticky top-[80vh] w-full">
-            <h2 className="text-white text-[2rem] font-bold text-center animate-scale-up">
-              FE INNOVATION DESIGN
-            </h2>
-          </div>
+        <div className="absolute bottom-0 left-0 right-0 z-10">
+          <h2 className="text-white text-2xl md:text-4xl font-bold text-center animate-scale-up px-4">
+            FE INNOVATION DESIGN
+          </h2>
         </div>
       </section>
       {/* 主圖區塊 自訂義滑鼠開啟 */}
@@ -61,9 +76,8 @@ export default function Home() {
           <div className="grid-item"></div>
         </div>
         <div
-          className="cursor-none"
-          onMouseEnter={() => handleCursor("hover")}
-          onMouseLeave={resetCursor}
+          className="cursor-none "
+          {...getMouseEvents(() => handleCursor("hover"), resetCursor)}
         >
           <ShaderImg imgUrl={"/image/TNB_background_removed(3).png"} />
         </div>
@@ -125,20 +139,19 @@ export default function Home() {
         </div>
       </section>
       {/* 文字說明區塊 */}
-      <section className="bg-[#E1E1E1]  flex flex-col pt-[20rem]  scroll-section text-[4rem]">
+      <section className="home-blur-info-card  scroll-section">
         <div
           className="sticky top-40 pr-[5rem] cursor-none"
-          onMouseEnter={() => handleCursor("Scroll")}
-          onMouseLeave={resetCursor}
+          {...getMouseEvents(() => handleCursor("Scroll"), resetCursor)}
         >
           <div className=" flex justify-end ">
             <BlurText words={"TOGETHER, WE CREATE TOMORROW"} />
           </div>
-          <div className="flex h-[60rem] justify-end">
+          <div className="flex h-[15vh] justify-end md:h-[60vh]">
             <div>
               <BlurText words={"HSIAO WEN SU"} />
             </div>
-            <div className="animate-scroll-broaden w-[10rem] overflow-hidden">
+            <div className="animate-scroll-broaden blur-img-container ">
               <Image
                 src="/image/The New Black 003.jpeg"
                 alt="mens"
@@ -163,18 +176,16 @@ export default function Home() {
           ARTWORKS
         </h2>
         <div
-          className="w-full h-[90vh] cursor-none"
-          onMouseEnter={() => handleCursor("Hover")}
-          onMouseLeave={resetCursor}
+          className="w-full h-[40vh] cursor-none md:h-[90vh]"
+          {...getMouseEvents(() => handleCursor("hover"), resetCursor)}
         >
-          <Gallery images={images.slice(0, 20)} />
+          <Gallery images={images.slice(0, 20)} isDesktop={isDesktop} />
         </div>
       </section>
       {/* 分類卡片區塊 */}
       <section
-        className="bg-foreground h-[100vh] w-full cursor-none  relative"
-        onMouseEnter={() => handleCursor("Click")}
-        onMouseLeave={resetCursor}
+        className="bg-foreground  w-full cursor-none relative md:h-[100vh]"
+        {...getMouseEvents(() => handleCursor("Click"), resetCursor)}
       >
         <h2 className="sticky top-0 text-background text-[3rem] pl-25 pt-20">
           PROJECTS
