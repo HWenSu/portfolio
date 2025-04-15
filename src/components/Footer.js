@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div className="bg-foreground flex text-white justify-between items-center px-[4rem] h-[5rem] ">
+    <div className="bg-foreground flex text-white justify-between items-center px-[4rem] h-[5rem] text-[1rem] md:text-sm ">
       <div className="w-[10rem]">
         HSIAO WEN
       </div>

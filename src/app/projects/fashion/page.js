@@ -36,7 +36,7 @@ const Fashion = () => {
         />
       </section>
       {/* 滾動式差背景圖片區塊 */}
-      <div className="relative w-full h-[70vh] overflow-hidden bg-black">
+      <div className="relative w-full h-[40vh] md:h-[70vh] overflow-hidden bg-black">
         <div className="w-full h-full bg-[url('/image/print-hero.jpg')] bg-cover bg-center bg-fixed">
           <div className="w-full h-full flex items-center justify-center text-white text-4xl font-bold">
             Textile Design

@@ -17,7 +17,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="relative">
+    <nav className="relative overflow-x-hidden">
       <div className="navbar-container">
         <div className="marquee-container">
           <h1 className="marquee-content animate-marquee">

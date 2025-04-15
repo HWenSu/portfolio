@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Website = () => {
   return (
-    <div className="relative bg-black/90 min-h-[100vh]">
+    <div className="relative bg-black/90 min-h-[100vh] overflow-hidden">
       <div className="website-grid image-grid">
         <div className="grid-block">
           <div className="tile">
