@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import "tailwindcss";
 
 @plugin "tailwindcss-animate";
@@ -46,8 +50,8 @@
 
 :root {
   --radius: 0.625rem;
-  --background: #F9F9F9;
-  --foreground: #0E0E0E;
+  --background: #f9f9f9;
+  --foreground: #0e0e0e;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.13 0.028 261.692);
   --popover: oklch(1 0 0);
@@ -216,7 +220,7 @@
     animation-fill-mode: forwards; /* 動畫結束後保持最終狀態 */
   }
 
-    @keyframes slide-down {
+  @keyframes slide-down {
     0% {
       transform: translateY(100px);
       opacity: 0;
@@ -227,10 +231,9 @@
     }
   }
 
-.animate-slide-down {
-  animation: slide-down 0.85s cubic-bezier(0.65, 0, 0.35, 1) forwards;
-}
-
+  .animate-slide-down {
+    animation: slide-down 0.85s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  }
 
   @keyframes broaden {
     0% {
@@ -282,7 +285,7 @@
   @keyframes slide-left {
     from {
       opacity: 0;
-      transform: translateX(200px)
+      transform: translateX(200px);
     }
     to {
       opacity: 1;
@@ -291,13 +294,13 @@
   }
   .animate-slide-left {
     animation: slide-left 0.85s cubic-bezier(0.65, 0, 0.35, 1);
-    animation-delay: 0.2s; 
+    animation-delay: 0.2s;
   }
 
-    @keyframes slide-right {
+  @keyframes slide-right {
     from {
       opacity: 0;
-      transform: translateX(-200px)
+      transform: translateX(-200px);
     }
     to {
       opacity: 1;
@@ -306,7 +309,7 @@
   }
   .animate-slide-right {
     animation: slide-right 0.85s cubic-bezier(0.65, 0, 0.35, 1);
-    animation-delay: 0.2s; 
+    animation-delay: 0.2s;
   }
 }
 
@@ -440,7 +443,7 @@
 
 .hero-grid {
   @apply grid w-full min-h-screen 
-   md:grid-cols-[0.1fr_0.85fr_1fr_1fr_1fr_1fr] ;
+   md:grid-cols-[0.1fr_0.85fr_1fr_1fr_1fr_1fr];
 }
 
 .grid-item {
@@ -460,8 +463,7 @@
 .hero-grid-2 {
   @apply flex  justify-around 
   row-start-1 pt-[5vh] text-xl
-  md:flex-col md:col-start-3 md:pt-[30vh] md:text-sm 
-  ;
+  md:flex-col md:col-start-3 md:pt-[30vh] md:text-sm;
 }
 
 .hero-center-image {
@@ -474,22 +476,22 @@
 
 .hero-grid-5 {
   @apply flex flex-col justify-around text-xl items-center text-center gap-6 py-10
-  md:text-sm
+  md:text-sm;
 }
 
 .hero-grid-5 h2 {
-  @apply font-bold ;
+  @apply font-bold;
 }
 
-.home-blur-info-card{
+.home-blur-info-card {
   @apply bg-[#E1E1E1]  flex flex-col 
   pt-[5rem] text-[2rem] 
-  md:pt-[20rem]  md:text-[4rem] 
+  md:pt-[20rem]  md:text-[4rem];
 }
 
-.blur-img-container{
-@apply w-[3rem] overflow-hidden
-md:w-[5em]
+.blur-img-container {
+  @apply w-[3rem] overflow-hidden
+md:w-[5em];
 }
 
 /* About Page */
@@ -562,7 +564,7 @@ md:w-[5em]
 }
 
 .category-card {
-  @apply relative bg-gray-200 m-8 w-[40vw]  overflow-hidden md:w-[20vw] md:max-h-[70vh] md:m-2 ;
+  @apply relative bg-gray-200 m-8 w-[40vw]  overflow-hidden md:w-[20vw] md:max-h-[70vh] md:m-2;
 }
 
 .category-card::after {
@@ -589,7 +591,7 @@ md:w-[5em]
 /* Product Card */
 .products-list-container {
   @apply grid grid-cols-2 gap-[4rem] px-[4vw] justify-center items-center 
-  md:grid-cols-5 md:my-[4rem]
+  md:grid-cols-5 md:my-[4rem];
 }
 
 .product-card {
@@ -730,7 +732,7 @@ md:w-[5em]
 /* Print Page */
 
 .print-page-container {
-  @apply pt-[10vh] ;
+  @apply pt-[10vh];
 }
 
 .print-page-container h2 {
@@ -788,7 +790,7 @@ md:w-[5em]
 .card {
   perspective: 2500px;
   @apply w-[25rem] h-[var(--card-height)] relative flex justify-center items-end px-[36px] mx-4
-  md:mx-[50px]  
+  md:mx-[50px];
 }
 
 .cover-image {
@@ -888,16 +890,17 @@ md:w-[5em]
   flex-direction: row;
   flex-wrap: wrap;
 
-  @apply pt-[20vh] translate-x-1/5 overflow-hidden
+  @apply pt-[20vh] translate-x-1/5 overflow-hidden;
 }
 
-.tile, .tile-link{
+.tile,
+.tile-link {
   @apply w-full h-full;
 }
 
 .grid-block {
   border-color: red;
-  @apply w-[50%] h-[20rem] p-[1rem] overflow-hidden md:w-[60%] 
+  @apply w-[50%] h-[20rem] p-[1rem] overflow-hidden md:w-[60%];
 }
 
 .image-grid {
@@ -959,43 +962,39 @@ md:w-[5em]
 
 /* Rotating Gallery */
 
-.r-gallery{
-  position:relative;
-  width:300px;
-  height:200px;
-  transform-style:preserve-3d;
-  animation:rotate 35s linear infinite;
+.r-gallery {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  transform-style: preserve-3d;
+  animation: rotate 35s linear infinite;
 }
 
-@keyframes rotate{
-  from{
-    transform:perspective(1200px) rotateY(0deg);
+@keyframes rotate {
+  from {
+    transform: perspective(1200px) rotateY(0deg);
   }
-  
-  to{
-    transform:perspective(1200px) rotateY(360deg);
+
+  to {
+    transform: perspective(1200px) rotateY(360deg);
   }
 }
 
-.r-gallery span{
-  transform:rotateY(calc(var(--i) * 45deg)) translateZ(380px);
-  @apply absolute w-full h-full origin-center transform-3d
+.r-gallery span {
+  transform: rotateY(calc(var(--i) * 45deg)) translateZ(380px);
+  @apply absolute w-full h-full origin-center transform-3d;
 }
 
-.r-gallery span img{
-  position:absolute;
-  width:100%;
-  height:100%;
-  object-fit:cover;
+.r-gallery span img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Grid-Gallery */
 .material-fill-1 {
-  font-variation-settings:
-    'FILL' 1,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 48;
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 
 .g-gallery {
@@ -1041,7 +1040,7 @@ md:w-[5em]
 .g-gallery > div > article:hover {
   height: var(--_height-hover); /* hover 時增加高度 */
   background-color: rgb(151, 152, 201);
-  color: #FFF;
+  color: #fff;
   z-index: 1; /* 確保 hover 時不會被其他元素遮擋 */
 }
 
@@ -1068,7 +1067,7 @@ md:w-[5em]
   height: 100%;
   object-fit: cover;
   transition: transform 300ms ease-in-out; /* 添加圖片本身的過渡效果 (可選) */
-cursor: pointer;
+  cursor: pointer;
 }
 
 .g-gallery > div > article:hover img {
@@ -1125,72 +1124,66 @@ cursor: pointer;
 }
 
 /* resume page */
-.resume-container{
-  @apply bg-[#DADBDD] flex flex-col md:grid grid-cols-12 px-[5rem] py-[10rem]  text-[2.2rem] md:text-[1rem]
+.resume-container {
+  @apply bg-[#DADBDD] flex flex-col md:grid grid-cols-12 px-[5rem] py-[10rem]  text-[2.2rem] md:text-[1rem];
 }
 
 .resume-container h3 {
-  @apply p-1 bg-[#DADBDD] z-[2] tracking-[0.4rem] font-bold
+  @apply p-1 bg-[#DADBDD] z-[2] tracking-[0.4rem] font-bold;
 }
 
 .resume-container h4 {
-  @apply p-1 bg-[#DADBDD] z-[2] tracking-[0.1rem] font-bold
+  @apply p-1 bg-[#DADBDD] z-[2] tracking-[0.1rem] font-bold;
 }
 
-.resume-container p, li {
-  @apply leading-[2]
+.resume-container p,
+li {
+  @apply leading-[2];
 }
 
-
-.experience-project-block{
-  @apply grid grid-cols-[6rem_1fr] pb-[4rem]
+.experience-project-block {
+  @apply grid grid-cols-[6rem_1fr] pb-[4rem];
 }
 
 .timeline {
-  @apply text-right opacity-50 pr-4 text-2xl md:text-sm
+  @apply text-right opacity-50 pr-4 text-2xl md:text-sm;
 }
 
 .dots {
-  @apply w-[4px] h-[4px] rounded-full bg-black mr-[1rem]
+  @apply w-[4px] h-[4px] rounded-full bg-black mr-[1rem];
 }
 
-.left-title{
-  @apply sticky top-[10rem]
+.left-title {
+  @apply sticky top-[10rem];
 }
 
 .divider {
-  @apply border-b border-black mb-2
+  @apply border-b border-black mb-2;
 }
 
-.resume-category{
-@apply h-[20vh]
+.resume-category {
+  @apply h-[20vh];
 }
 
-.resume-category ul{
-  @apply scale-50 absolute inset-0 -translate-x-1/4  grayscale flex-row 
+.resume-category ul {
+  @apply scale-50 absolute inset-0 -translate-x-1/4  grayscale flex-row;
 }
-
 
 .custom-btn {
-@apply place-self-end mr-[5rem]
+  @apply place-self-end mr-[5rem];
 }
 
 .custom-btn button {
-  @apply bg-black/80 px-[1.8rem] py-[0.5rem] rounded-[10px] text-background
+  @apply bg-black/80 px-[1.8rem] py-[0.5rem] rounded-[10px] text-background;
 }
 
 .custom-btn button:hover {
-  @apply  -translate-x-[1rem] transition-all duration-300 ease-in-out 
+  @apply -translate-x-[1rem] transition-all duration-300 ease-in-out;
 }
 
 .name {
-  @apply font-bold text-[1.5rem] tracking-[0.3rem] text-right
+  @apply font-bold text-[1.5rem] tracking-[0.3rem] text-right;
 }
-
-
-
-
-
 
 /* .side-project, .side-project h3 ,.side-project h4 {
  @apply bg-[#d6d7d8]
