@@ -56,7 +56,7 @@ const Navbar = () => {
           {/* Desktop Navigation - Hidden on Mobile */}
           <div className="hidden md:flex">
             <ul className="main-nav">
-              <li>
+              <li className="md:hidden">
                 <Link href="/">HOME</Link>
               </li>
               <li
@@ -75,7 +75,7 @@ const Navbar = () => {
                     priority
                   />
                 </Link>
-                <ul className="products-drop-down-container -translate-x-1/4">
+                <ul className="products-drop-down-container -translate-x-1/2">
                   <li>
                     <Link href="/projects/fashion">FASHION</Link>
                   </li>
