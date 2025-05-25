@@ -394,7 +394,7 @@
 }
 
 .scale-y-short {
-  @apply pointer-events-auto  scale-y-15;
+  @apply pointer-events-auto  scale-y-25;
 }
 
 .dropdown-content {
@@ -731,10 +731,6 @@ md:w-[5em];
 
 /* Print Page */
 
-.print-page-container {
-  @apply pt-[10vh];
-}
-
 .print-page-container h2 {
   @apply text-center text-[8rem];
 }
@@ -789,7 +785,7 @@ md:w-[5em];
 /* Card 3D Hover */
 .card {
   perspective: 2500px;
-  @apply w-[25rem] h-[var(--card-height)] relative flex justify-center items-end px-[36px] mx-4
+  @apply w-[20rem] h-[var(--card-height)] relative flex justify-center items-end px-[36px] mx-4
   md:mx-[50px];
 }
 
