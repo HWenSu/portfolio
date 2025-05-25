@@ -18,9 +18,9 @@ const Fashion = () => {
       {/* 自訂義滑鼠 */}
       <CustomCursor active={cursorActive} cursorText={cursorText} />
       {/* 介紹區塊 */}
-      <section className=" w-full h-[50vh] md:h-[90vh]  ">
+      <section className=" w-full h-[50vh] md:h-[100vh]  ">
         <div className="w-full h-full bg-black text-white scroll-section flex flex-col justify-between pb-[10rem]">
-          <BlurText words={"JACQUARD DESIGN"} />
+          <BlurText words={"JACQUARD"} />
           <Card3DHover />
         </div>
       </section>
