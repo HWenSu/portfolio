@@ -1166,7 +1166,7 @@ li {
 }
 
 .custom-btn {
-  @apply place-self-end mr-[5rem];
+  @apply place-self-end mr-[5rem] cursor-pointer;
 }
 
 .custom-btn button {

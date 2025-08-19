@@ -5,23 +5,20 @@ import GridGallery from "@/components/GridGallery";
 import { Images } from "lucide-react";
 
 const Visual = () => {
+  //從API獲取GALLERY圖片
+  const [images, setImages] = useState([]);
 
-    //從API獲取GALLERY圖片
-      const [images, setImages] = useState([]);
-    
-      useEffect(() => {
-        fetch("/api/get-visuals")
-          .then((res) => res.json())
-          .then(setImages)
-          .catch((err) => console.error("Error fetching images:", err));
-      }, []);
+  useEffect(() => {
+    fetch("/api/get-visuals")
+      .then((res) => res.json())
+      .then(setImages)
+      .catch((err) => console.error("Error fetching images:", err));
+  }, []);
 
-      const sum = images.length
-      const slicedFirstImages = images.slice(0, 10)
-      const slicedSecondImages = images.slice(10, 22);
-      const slicedThirdImages = images.slice(sum-22, sum+1)
-
-
+  const sum = images.length;
+  const slicedFirstImages = images.slice(0, 10);
+  const slicedSecondImages = images.slice(10, 22);
+  const slicedThirdImages = images.slice(sum - 22, sum + 1);
 
   return (
     <div>

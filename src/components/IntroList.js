@@ -1,8 +1,7 @@
 import BlurText from "@/components/BlurText";
 import LightText from "@/components/LightText";
 
-const IntroList = ({invert, listItem, videoUrl}) => {
-
+const IntroList = ({ invert, listItem, videoUrl }) => {
   const introduction =
     "I am a visual and digital designer skilled in Adobe Photoshop, Illustrator, After Effects, Premiere, React, Next, and Figma. Export experience strengthened my cross-departmental collaboration, aligning diverse needs for international brands.";
 
@@ -15,7 +14,6 @@ const IntroList = ({invert, listItem, videoUrl}) => {
           autoPlay
           muted
           loop
-          controls
           className={`w-full h-auto ${invert && invert}`}
         />
       </div>

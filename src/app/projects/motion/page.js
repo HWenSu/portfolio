@@ -107,7 +107,6 @@ const Motion = () => {
               playsInline
               autoPlay
               muted
-              controls
               className="w-full h-auto my-[3rem]"
               key={src}
             />

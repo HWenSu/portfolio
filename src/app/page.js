@@ -86,7 +86,7 @@ export default function Home() {
         <div className="hero-grid">
           <div></div>
           <aside className="hero-grid-1">
-            <Link href="/products">
+            <Link href="/projects/fashion">
               <Image
                 src="/image/hero-man.png"
                 alt="mens"
@@ -95,7 +95,7 @@ export default function Home() {
                 priority
               />
             </Link>
-            <Link href="/products">
+            <Link href="/projects/fashion">
               <Image
                 src="/image/hero-woman.png"
                 alt="mens"
