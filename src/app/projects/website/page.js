@@ -1,4 +1,5 @@
 import Image from "next/image";
+import AnimalKingdom from "@/components/AnimalKingdom";
 
 const Website = () => {
   return (
@@ -87,8 +88,12 @@ const Website = () => {
           </div>
         </div>
       </div>
+
+      <section>
+        <AnimalKingdom />
+      </section>
     </div>
   );
-}
+};
 
 export default Website;
