@@ -5,13 +5,14 @@ const AnimalKingdom = () => {
   return (
     <div>
       <h2>UI DESIGN</h2>
-      <Image
+      {/* <Image
         width={1920}
         height={6000}
         className="tile-img tile-img5"
         src="/image/ui/image.png"
         alt="Image"
-      />
+      /> */}
+      <img src="/image/ui/image.png" alt="" />
     </div>
   );
 };
