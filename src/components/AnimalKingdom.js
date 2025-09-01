@@ -12,7 +12,7 @@ const AnimalKingdom = () => {
         src="/image/ui/image.png"
         alt="Image"
       /> */}
-      <img src="/image/ui/image.png" alt="" />
+      <img src="/image/ui/Image.png" alt="" />
     </div>
   );
 };
